@@ -1,0 +1,15 @@
+@charset "ISO-8859-1";
+
+.blackText {
+	color: black;
+}
+
+.awesome {
+	background-image: url("coffee_beans.jpg");
+	background-color: purple;
+	height: 100px;
+}
+
+.registration {
+	text-align: center;
+}
