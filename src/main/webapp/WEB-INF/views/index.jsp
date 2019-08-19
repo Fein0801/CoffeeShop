@@ -14,7 +14,7 @@
 </head>
 <body>
 	<div class="awesome">
-		<h1>
+		<h1 style="color: white; padding: 23px 25px; text-shadow: 2px 2px black;">
 			Hello
 		</h1>
 	</div>

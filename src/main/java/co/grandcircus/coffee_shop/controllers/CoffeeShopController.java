@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import co.grandcircus.coffee_shop.EndUser;
+import co.grandcircus.coffee_shop.model.EndUser;
 
 @Controller
 public class CoffeeShopController {

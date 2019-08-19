@@ -7,6 +7,7 @@
 <title>Registration</title>
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cerulean/bootstrap.min.css" rel="stylesheet" integrity="sha384-C++cugH8+Uf86JbNOnQoBweHHAe/wVKN/mb0lTybu/NZ9sEYbd+BbbYtNpWYAsNP" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
 	<form action="say-hello" method="post">
@@ -18,7 +19,7 @@
 				</div>
 				<div class="col-lg-3">First Name:</div>
 				<div class="col-lg-3">
-					<input type="text" name="firstName" id="first_name_field" placeholder="John">
+					<input type="text" name="firstName" id="first_name_field" placeholder="John" required>
 				</div>
 				<div class="col-lg-3">
 					<!-- Y U No work? -->
@@ -32,7 +33,7 @@
 				</div>
 				<div class="col-lg-3">Last Name:</div>
 				<div class="col-lg-3">
-					<input type="text" name="lastName" id="last_name_field" placeholder="Smith">
+					<input type="text" name="lastName" id="last_name_field" placeholder="Smith" required>
 				</div>
 				<div class="col-lg-3">
 					<!-- Y U No work? -->
@@ -46,7 +47,7 @@
 				</div>
 				<div class="col-lg-3">Email:</div>
 				<div class="col-lg-3">
-					<input type="email" name="email" id="email_field" placeholder="someone@example.com">
+					<input type="email" name="email" id="email_field" placeholder="someone@example.com" required>
 				</div>
 				<div class="col-lg-3">
 					<!-- Y U No work? -->
@@ -60,7 +61,7 @@
 				</div>
 				<div class="col-lg-3">Phone #:</div>
 				<div class="col-lg-3">
-					<input type="text" name="phone" id="phone_field" placeholder="(555)-555-5555">
+					<input type="text" name="phone" id="phone_field" placeholder="(555)-555-5555" required>
 				</div>
 				<div class="col-lg-3">
 					<!-- Y U No work? -->
@@ -73,7 +74,7 @@
 				</div>
 				<div class="col-lg-3">Password:</div>
 				<div class="col-lg-3">
-					<input type="password" name="password" id="password_field_1" class="pw">
+					<input type="password" name="password" id="password_field_1" class="pw" required>
 				</div>
 				<div class="col-lg-3">
 					<!-- Y U No work? -->
@@ -87,9 +88,10 @@
 				</div>
 				<div class="col-lg-3">Confirm Password:</div>
 				<div class="col-lg-3">
-					<input type="password" name="password-confirm" id="password_field_2" class="pw" oninput="check('password_field_1', 'password_field_2')">
+					<input type="password" name="password-confirm" id="password_field_2" class="pw" oninput="check('password_field_1', 'password_field_2')" required>
+					<input type="checkbox" id="show-password" onclick="showPassword()"> Show Password
 				</div>
-				<div class="col-lg-3"><input type="checkbox" id="show-password" onclick="showPassword()"> Show Password</div>
+				<div class="col-lg-3"></div>
 			</div>
 			<br>
 		</fieldset>

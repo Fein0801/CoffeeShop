@@ -1,4 +1,4 @@
-package co.grandcircus.coffee_shop;
+package co.grandcircus.coffee_shop.model;
 
 import org.springframework.stereotype.Component;
 
