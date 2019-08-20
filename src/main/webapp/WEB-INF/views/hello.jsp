@@ -5,17 +5,16 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Hello</title>
-	<link rel="stylesheet" type="text/css" href="main.css">
 	<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cerulean/bootstrap.min.css"
 	rel="stylesheet"
 	integrity="sha384-C++cugH8+Uf86JbNOnQoBweHHAe/wVKN/mb0lTybu/NZ9sEYbd+BbbYtNpWYAsNP"
 	crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-<h1 class="blackText">Hello ${userInfo.firstName}</h1>
-<div id="test">
+<%@include file="partials/header.jsp"%>
+<h1 class="text-white">Hello ${userInfo.getFirstName()}</h1>
 
-</div>
 <script type="text/javascript" src="script.js"></script>
 <!-- Javascript for Bootstrap -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

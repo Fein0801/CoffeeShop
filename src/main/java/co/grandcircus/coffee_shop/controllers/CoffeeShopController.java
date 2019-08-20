@@ -23,5 +23,10 @@ public class CoffeeShopController {
 	public ModelAndView hello(EndUser user) {
 		return new ModelAndView("hello", "userInfo", user);
 	}
+	
+	@RequestMapping("/return")
+	public ModelAndView returnHome() {
+		return new ModelAndView("redirect:/");
+	}
 
 }

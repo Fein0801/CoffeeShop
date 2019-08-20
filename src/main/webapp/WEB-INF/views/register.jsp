@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,101 +11,61 @@
 <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-	<form action="say-hello" method="post">
-		<fieldset name="General Info">
-			<!-- First Name -->
-			<div class="row">
-				<div class="col-lg-3">
-					<!-- Y U No work? -->
-				</div>
-				<div class="col-lg-3">First Name:</div>
-				<div class="col-lg-3">
-					<input type="text" name="firstName" id="first_name_field" placeholder="John" required>
-				</div>
-				<div class="col-lg-3">
-					<!-- Y U No work? -->
-				</div>
+	<%@include file="partials/header.jsp"%>
+
+	<form action="say-hello" method="post" onsubmit="return checkBirthday();">
+		<div class="card text-white bg-dark mb-3" style="max-width: 25rem; margin: 50px auto;" align="center">
+			<div class="card-header">Register</div>
+			<div class="card-body">
+				<fieldset>
+					<h4 class="card-title">General Info</h4>
+					<p class="card-text">
+						First Name:<br><input type="text" name="firstName" id="first_name_field" placeholder="John">
+					</p>
+					<p class="card-text">
+						Last Name:<br><input type="text" name="lastName" id="last_name_field" placeholder="Smith">
+					</p>
+					<p class="card-text">
+						Email:<br><input type="email" name="email" id="email_field" placeholder="someone@example.com">
+					</p>
+					<p class="card-text">
+						Phone #:<br><input type="text" name="phone" id="phone_field" placeholder="(555)-555-5555">
+					</p>
+					<p class="card-text">
+						Password:<br> <input type="password" name="password" id="password_field_1" class="pw">
+					</p>
+					<p class="card-text">
+						Confirm Password:<br><input type="password" name="password-confirm" id="password_field_2" class="pw"
+							oninput="check('password_field_1', 'password_field_2')">
+					</p>
+					<p class="card-text">
+						<input type="checkbox" id="show-password" onclick="showPassword()">Show Password
+					</p>
+				</fieldset>
+				<fieldset>
+					<h4 class="card-title">More Info</h4>
+					<p class="card-text">
+						Birthday:<br>
+						<select name="month" id="month_box" required>
+						</select> 
+						<select name="day" id="day_box" required>
+						</select> 
+						<select name="year" id="year_box" required>
+						</select>
+					</p>
+					<p class="card-text">
+						<label for="gender">Gender:</label><br>
+						<input type="radio" name="gender" value="male" checked>Male<br>
+						<input type="radio" name="gender" value="female">Female<br>
+						<input type="radio" name="gender" value="other">Other<br>
+					</p>
+				</fieldset>
+				<br>
+				<input class="btn btn-primary" type="submit" name="Submit" style="max-width: 100px;">
 			</div>
-			<br>
-			<!-- Last Name -->
-			<div class="row">
-				<div class="col-lg-3">
-					<!-- Y U No work? -->
-				</div>
-				<div class="col-lg-3">Last Name:</div>
-				<div class="col-lg-3">
-					<input type="text" name="lastName" id="last_name_field" placeholder="Smith" required>
-				</div>
-				<div class="col-lg-3">
-					<!-- Y U No work? -->
-				</div>
-			</div>
-			<br>
-			<!-- Email -->
-			<div class="row">
-				<div class="col-lg-3">
-					<!-- Y U No work? -->
-				</div>
-				<div class="col-lg-3">Email:</div>
-				<div class="col-lg-3">
-					<input type="email" name="email" id="email_field" placeholder="someone@example.com" required>
-				</div>
-				<div class="col-lg-3">
-					<!-- Y U No work? -->
-				</div>
-			</div>
-			<br>
-			<!-- Phone -->
-			<div class="row">
-				<div class="col-lg-3">
-					<!-- Y U No work? -->
-				</div>
-				<div class="col-lg-3">Phone #:</div>
-				<div class="col-lg-3">
-					<input type="text" name="phone" id="phone_field" placeholder="(555)-555-5555" required>
-				</div>
-				<div class="col-lg-3">
-					<!-- Y U No work? -->
-				</div>
-			</div>
-			<br>
-			<!-- Password -->
-			<div class="row">
-				<div class="col-lg-3">
-				</div>
-				<div class="col-lg-3">Password:</div>
-				<div class="col-lg-3">
-					<input type="password" name="password" id="password_field_1" class="pw" required>
-				</div>
-				<div class="col-lg-3">
-					<!-- Y U No work? -->
-				</div>
-			</div>
-			<br>
-			<!-- Confirm Password -->
-			<div class="row">
-				<div class="col-lg-3">
-					<!-- Y U No work? -->
-				</div>
-				<div class="col-lg-3">Confirm Password:</div>
-				<div class="col-lg-3">
-					<input type="password" name="password-confirm" id="password_field_2" class="pw" oninput="check('password_field_1', 'password_field_2')" required>
-					<input type="checkbox" id="show-password" onclick="showPassword()"> Show Password
-				</div>
-				<div class="col-lg-3"></div>
-			</div>
-			<br>
-		</fieldset>
-		
-		<fieldset name="Gender">
-			<label for="gender">Gender:</label><br>
-			<input type="radio" name="gender" value="male" checked>Male<br>
-			<input type="radio" name="gender" value="female">Female<br>
-			<input type="radio" name="gender" value="other">Other<br>
-		</fieldset>
-		<input type="submit" name="Submit">
+		</div>
 	</form>
-	
+
 	<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
