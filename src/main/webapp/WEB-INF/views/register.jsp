@@ -13,30 +13,30 @@
 <body>
 	<%@include file="partials/header.jsp"%>
 
-	<form action="say-hello" method="post" onsubmit="return checkBirthday();">
+	<form action="say-hello" method="post">
 		<div class="card text-white bg-dark mb-3" style="max-width: 25rem; margin: 50px auto;" align="center">
 			<div class="card-header">Register</div>
 			<div class="card-body">
 				<fieldset>
 					<h4 class="card-title">General Info</h4>
 					<p class="card-text">
-						First Name:<br><input type="text" name="firstName" id="first_name_field" placeholder="John">
+						First Name:<br><input type="text" name="firstName" id="first_name_field" placeholder="John" required>
 					</p>
 					<p class="card-text">
-						Last Name:<br><input type="text" name="lastName" id="last_name_field" placeholder="Smith">
+						Last Name:<br><input type="text" name="lastName" id="last_name_field" placeholder="Smith" required>
 					</p>
 					<p class="card-text">
-						Email:<br><input type="email" name="email" id="email_field" placeholder="someone@example.com">
+						Email:<br><input type="email" name="email" id="email_field" placeholder="someone@example.com" required>
 					</p>
 					<p class="card-text">
-						Phone #:<br><input type="text" name="phone" id="phone_field" placeholder="(555)-555-5555">
+						Phone #:<br><input type="text" name="phone" id="phone_field" placeholder="(555)-555-5555" required>
 					</p>
 					<p class="card-text">
-						Password:<br> <input type="password" name="password" id="password_field_1" class="pw">
+						Password:<br><input type="password" name="password" id="password_field_1" class="pw" required>
 					</p>
 					<p class="card-text">
 						Confirm Password:<br><input type="password" name="password-confirm" id="password_field_2" class="pw"
-							oninput="check('password_field_1', 'password_field_2')">
+							oninput="check('password_field_1', 'password_field_2')" required>
 					</p>
 					<p class="card-text">
 						<input type="checkbox" id="show-password" onclick="showPassword()">Show Password
@@ -45,19 +45,13 @@
 				<fieldset>
 					<h4 class="card-title">More Info</h4>
 					<p class="card-text">
-						Birthday:<br>
-						<select name="month" id="month_box" required>
-						</select> 
-						<select name="day" id="day_box" required>
-						</select> 
-						<select name="year" id="year_box" required>
-						</select>
-					</p>
-					<p class="card-text">
 						<label for="gender">Gender:</label><br>
 						<input type="radio" name="gender" value="male" checked>Male<br>
 						<input type="radio" name="gender" value="female">Female<br>
 						<input type="radio" name="gender" value="other">Other<br>
+					</p>
+					<p class="card-text">
+						Admin Password:<input type="password" name="admin_pass">
 					</p>
 				</fieldset>
 				<br>

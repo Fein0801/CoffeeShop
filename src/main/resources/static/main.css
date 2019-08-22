@@ -17,5 +17,14 @@
 }
 
 body {
-	background-color: #004cff;
+	background-color: #008ab0;
+}
+
+.login {
+	background-color: blue;
+	height: 50px;
+}
+
+.tbl {
+	padding: 50px 100px;
 }

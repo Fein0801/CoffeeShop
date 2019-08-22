@@ -13,7 +13,7 @@
 </head>
 <body>
 <%@include file="partials/header.jsp"%>
-<h1 class="text-white">Hello ${userInfo.getFirstName()}</h1>
+<h1 class="text-white">Welcome, ${userInfo.getFirstName()}, to Uncle Ben's Coffee Co.</h1>
 
 <script type="text/javascript" src="script.js"></script>
 <!-- Javascript for Bootstrap -->

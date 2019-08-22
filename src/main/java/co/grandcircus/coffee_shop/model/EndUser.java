@@ -1,10 +1,21 @@
 package co.grandcircus.coffee_shop.model;
 
-import org.springframework.stereotype.Component;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Component
+@Entity
+@Table(name = "users")
 public class EndUser {
-	
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+
 	private String firstName;
 	private String lastName;
 	private String email;
@@ -12,8 +23,24 @@ public class EndUser {
 	private String password;
 	private String gender;
 	
+	@Enumerated(EnumType.ORDINAL)
+	private AdminStatus adminStatus;
+
 	public EndUser() {
 		super();
+	}
+
+	public EndUser(Integer id, String firstName, String lastName, String email, String phone, String password,
+			String gender, AdminStatus adminStatus) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.phone = phone;
+		this.password = password;
+		this.gender = gender;
+		this.adminStatus = adminStatus;
 	}
 
 	public EndUser(String firstName, String lastName, String email, String phone, String password, String gender) {
@@ -24,6 +51,14 @@ public class EndUser {
 		this.phone = phone;
 		this.password = password;
 		this.gender = gender;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getFirstName() {
@@ -74,10 +109,19 @@ public class EndUser {
 		this.gender = gender;
 	}
 
-	// TODO Make a better-looking display
+	public AdminStatus getAdminStatus() {
+		return adminStatus;
+	}
+
+	public void setAdminStatus(AdminStatus adminStatus) {
+		this.adminStatus = adminStatus;
+	}
+
 	@Override
 	public String toString() {
-		return "EndUser [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", phone=" + phone
-				+ ", password=" + password + ", gender=" + gender + "]";
+		return "EndUser [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+				+ ", phone=" + phone + ", password=" + password + ", gender=" + gender + ", adminStatus=" + adminStatus
+				+ "]";
 	}
+
 }
