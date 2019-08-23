@@ -14,16 +14,10 @@
 <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-	<%@include file="partials/header.jsp"%>	
+	<%@include file="partials/header.jsp"%>
 	<div class="tbl">
-	<form action="search-products-by-name" method="post">
-		<h1 class="text-white">Search by name</h1>
-		<input type="text" placeholder="Name" name="itemName" value="${nameInput}" autofocus>
-		<input type="submit" value="Search" class="btn btn-primary">
-		<c:if test="${not empty nameInput}">
-			<a href="search-products-by-name" class="btn btn-primary">Clear</a>
-		</c:if>
-	</form>
+	<a href="/add-item" class="btn btn-primary">Add New Item</a><br>
+	<p>${message}</p>
 	<h1 class="text-white">Our products</h1>
 	<table class="table table-hover">
 		<thead>
@@ -33,16 +27,20 @@
 				<th>Price</th>
 				<th>Description</th>
 				<th>Quantity</th>
+				<th>Edit</th>
+				<th>Delete</th>
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach var="item" items="${productList}" varStatus="i">
 				<tr class="table-primary">
 					<td>${i.count}</td>
-					<td>${item.name }</td>
-					<td>$${item.price }</td>
-					<td>${item.description }</td>
-					<td>${item.qty }</td>
+					<td>${item.name}</td>
+					<td>$${item.price}</td>
+					<td>${item.description}</td>
+					<td>${item.qty}</td>
+					<td><a href="/edit-item?id=${item.id}" class="btn btn-warning">Edit</a></td>
+					<td><a href="/delete-item?id=${item.id}" class="btn btn-danger">Delete</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

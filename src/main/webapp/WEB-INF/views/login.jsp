@@ -27,6 +27,9 @@
 				Password:<br>
 				<input type="password" name="password" id="password_field_1" class="pw" required>
 			</p>
+			<p class="card-text">
+				<input type="checkbox" id="show-password" onclick="showPassword()">Show Password
+			</p>
 			<input class="btn btn-primary" type="submit" name="Log In" style="max-width: 100px;">
 			<p class="card-text">${message}<br></p>
 		</div>

@@ -9,5 +9,7 @@ import co.grandcircus.coffee_shop.model.Item;
 public interface ItemRepository extends JpaRepository<Item, Integer> {
 	
 	List<Item> findByNameContaining(String name);
+	
+	boolean existsByName(String name);
 
 }

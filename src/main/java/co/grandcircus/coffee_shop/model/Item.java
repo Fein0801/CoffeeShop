@@ -17,27 +17,35 @@ public class Item {
 	private String name;
 	private double price;
 	private String description;
-	private String qty;
+	private Integer qty;
 	
 	public Item() {
 		super();
 	}
 
-	public Item(String name, double price, String description, String qty, int id) {
+	public Item(Integer id, String name, double price, String description, Integer qty) {
 		super();
+		this.id = id;
 		this.name = name;
 		this.price = price;
 		this.description = description;
 		this.qty = qty;
-		this.id = id;
 	}
 
-	public Item(String name, double price, String description, String qty) {
+	public Item(String name, double price, String description, Integer qty) {
 		super();
 		this.name = name;
 		this.price = price;
 		this.description = description;
 		this.qty = qty;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -64,25 +72,11 @@ public class Item {
 		this.description = description;
 	}
 
-	public String getQty() {
+	public Integer getQty() {
 		return qty;
 	}
 
-	public void setQty(String qty) {
+	public void setQty(Integer qty) {
 		this.qty = qty;
-	}	
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	@Override
-	public String toString() {
-		return "Item [name=" + name + ", price=" + price + ", description=" + description + ", qty=" + qty
-				+ ", item_id=" + id + "]";
 	}
 }
